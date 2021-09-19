@@ -18,7 +18,7 @@ public class SparkHelloWorldJava {
 
        final List<String> localCollection = Arrays.asList("Hello", "World!");
 
-       final JavaRDD<String> distributedCollection = sc.parallelize(localCollection);
+       final JavaRDD<String> distributedCollection = sc.parallelize(localCollection, 2);
 
        distributedCollection.foreach(s -> System.out.println(s));
 
