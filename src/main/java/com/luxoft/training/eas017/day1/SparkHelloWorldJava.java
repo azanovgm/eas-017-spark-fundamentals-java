@@ -1,4 +1,4 @@
-package com.luxoft.training.eas017.rdd;
+package com.luxoft.training.eas017.day1;
 
 import org.apache.spark.SparkConf;
 import org.apache.spark.api.java.JavaRDD;
