@@ -11,7 +11,7 @@
     <properties>
         <scala.compile.major.version>2.12</scala.compile.major.version>
         <spark.version>3.1.2</spark.version>
-        <hadoop.version>3.2.2</hadoop.version>
+        <hadoop.version>3.2.0</hadoop.version>
     </properties>
 
      <dependencies>
@@ -29,12 +29,11 @@
             <artifactId>hadoop-common</artifactId>
             <version>${hadoop.version}</version>
         </dependency>
-         <dependency>
-             <groupId>org.apache.hadoop</groupId>
-             <artifactId>hadoop-aws</artifactId>
-             <version>${hadoop.version}</version>
-         </dependency>
-
+        <dependency>
+            <groupId>org.apache.hadoop</groupId>
+            <artifactId>hadoop-aws</artifactId>
+            <version>${hadoop.version}</version>
+        </dependency>
      </dependencies>
 
       <build>

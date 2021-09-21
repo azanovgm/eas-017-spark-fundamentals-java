@@ -20,9 +20,7 @@ public class SparkHelloWorldS3 {
            throw new IllegalArgumentException("You must provide the name of the output folder");
        }
 
-       final SparkConf conf = new SparkConf()
-               .setAppName("Hello World!")
-               .setMaster("local[*]");
+       final SparkConf conf = new SparkConf().setAppName("Hello S3");
        final JavaSparkContext sc = new JavaSparkContext(conf);
        sc.hadoopConfiguration().set("fs.s3a.endpoint", "s3.amazonaws.com");
        sc.hadoopConfiguration().set("fs.s3a.access.key", accessKey);
