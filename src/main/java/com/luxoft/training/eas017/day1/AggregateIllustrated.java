@@ -18,7 +18,7 @@ public class AggregateIllustrated {
 
     public static void main(String[] args)  {
         System.setErr(new NullPrintStream());
-        final SparkConf conf = new SparkConf().setAppName("AggregateIllustrated").setMaster("local[*]");
+        final SparkConf conf = new SparkConf().setAppName("ReadAndWrite").setMaster("local[*]");
         final JavaSparkContext sc = new JavaSparkContext(conf);
 
         JavaRDD<Integer> rdd1 = sc.parallelize(Arrays.asList(5, 6, 7), 1);
