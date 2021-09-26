@@ -10,7 +10,8 @@
 
     <properties>
         <scala.compile.major.version>2.12</scala.compile.major.version>
-        <spark.version>3.1.2</spark.version>
+        <spark.major.version>3.0</spark.major.version>
+        <spark.version>${spark.major.version}.3</spark.version>
         <hadoop.version>3.2.0</hadoop.version>
     </properties>
 
@@ -21,6 +22,13 @@
              <artifactId>spark-core_${scala.compile.major.version}</artifactId>
              <version>${spark.version}</version>
              <!--<scope>provided</scope>--> <!-- Scope compile is required for local Spark launch  -->
+         </dependency>
+
+         <!-- We will use NullPrintStream from there -->
+         <dependency>
+             <groupId>commons-io</groupId>
+             <artifactId>commons-io</artifactId>
+             <version>2.11.0</version>
          </dependency>
 
          <!--  required to access AWS s3 -->
@@ -34,7 +42,34 @@
             <artifactId>hadoop-aws</artifactId>
             <version>${hadoop.version}</version>
         </dependency>
+
+         <!-- spark-sql contains Dataset API -->
+         <dependency>
+             <groupId>org.apache.spark</groupId>
+             <artifactId>spark-sql_${scala.compile.major.version}</artifactId>
+             <version>${spark.version}</version>
+         </dependency>
+
+         <!-- Graph libraries for day 5 -->
+         <dependency>
+             <groupId>org.apache.spark</groupId>
+             <artifactId>spark-graphx_${scala.compile.major.version}</artifactId>
+             <version>${spark.version}</version>
+         </dependency>
+         <dependency>
+             <groupId>graphframes</groupId>
+             <artifactId>graphframes</artifactId>
+             <version>0.8.1-spark${spark.major.version}-s_${scala.compile.major.version}</version>
+         </dependency>
      </dependencies>
+
+     <repositories>
+        <!-- For graphframes -->
+         <repository>
+             <id>spark-packages</id>
+             <url>https://repos.spark-packages.org/</url>
+         </repository>
+     </repositories>
 
       <build>
         <plugins>
