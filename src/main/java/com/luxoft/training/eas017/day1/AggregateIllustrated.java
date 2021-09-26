@@ -35,7 +35,7 @@ public class AggregateIllustrated {
                 return listOfSize.iterator();
             }).collect();
 
-        System.out.println("Partion sizes: " + partitionSizes.toString());
+        System.out.println("Partition sizes: " + partitionSizes.toString());
 
         int aggregateResult =
             rdd.aggregate(1, AggregateIllustrated::mult, AggregateIllustrated::sum);
