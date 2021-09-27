@@ -44,8 +44,6 @@ public class TransformationsAndActions {
         System.out.println("Max square is " + maxSquare);
 
         double sumOfSquares = squaredNumbersRDD.reduce((d1, d2) -> d1 + d2);
-        // Task must be serializable
-        //.reduce(Double::sum); would fail
         System.out.println("Sum of squares is " + sumOfSquares);
         
         // Transformations are lazy
