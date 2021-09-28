@@ -5,7 +5,7 @@ import org.apache.spark.SparkConf;
 import org.apache.spark.api.java.JavaRDD;
 import org.apache.spark.api.java.JavaSparkContext;
 
-import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 
 public class WordCount {
@@ -18,7 +18,7 @@ public class WordCount {
 
         //TODO
         //Lets count number of non empty lines
-        long numberOfNonEmptyLines = text.filter(line -> !line.isEmpty()).count();
+        long numberOfNonEmptyLines = 0;
         System.out.println("There are " + numberOfNonEmptyLines + " non empty lines");
 
         //TODO
@@ -26,24 +26,13 @@ public class WordCount {
         //To extract words, convert string to lowercase and
         //keep only alpha-numeric characters and whitespaces (Hint: you might want to use regex "[^a-z]")
 
-        int mostFrequentWordLength = text.flatMap(line -> Arrays.asList(line.split(" ")).iterator())
-                .map(word -> word.toLowerCase().replaceAll("[^a-z]", ""))
-                .keyBy(word -> word.length())
-                .aggregateByKey(0, (count, word) -> count + 1, (count1, count2) -> count1 + count2)
-                .mapToPair(tuple -> tuple.swap())
-                .sortByKey(false)
-                .values()
-                .first();
+        int mostFrequentWordLength = 0;
 
         System.out.println("Most frequent word length in text is " + mostFrequentWordLength);
         
         //TODO
         //Print all distinct words for the most frequent word length
-        List<String> words = text.flatMap(line -> Arrays.asList(line.split(" ")).iterator())
-                .map(word -> word.toLowerCase().replaceAll("[^a-z]", ""))
-                .filter(word -> word.length() == mostFrequentWordLength)
-                .distinct()
-                .collect();
+        List<String> words = Collections.EMPTY_LIST;
         System.out.println("Print all distinct words for the most frequent word length: " + words);
         
     }
