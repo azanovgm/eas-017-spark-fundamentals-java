@@ -37,11 +37,16 @@ public class JoinExamples {
          System.out.println("Addresses PairRDD:" + addresses.collect());
          System.out.println("Ratings PairRDD:" + ratings.collect());
 
-         JavaPairRDD<String, Tuple2<String, Double>> join =  addresses.join(ratings);
+         JavaPairRDD<String, Tuple2<String, Double>> join = addresses.join(ratings);
          System.out.println("addresses.join(ratings): " + join.collect());
 
          JavaPairRDD<String, Tuple2<String, Optional<Double>>> leftOuterJoin =  addresses.leftOuterJoin(ratings);
          System.out.println("addresses.leftOuterJoin(ratings): " + leftOuterJoin.collect());
 
+         JavaPairRDD<String, String> subtractByKey = addresses.subtractByKey(ratings);
+         System.out.println("addresses.subtractByKey(ratings): " + subtractByKey.collect());
+         
+         JavaPairRDD<String, Tuple2<Iterable<String>, Iterable<Double>>> cogroup = addresses.cogroup(ratings);
+         System.out.println("addresses.cogroup(ratings): " + cogroup.collect());
      }
 }
