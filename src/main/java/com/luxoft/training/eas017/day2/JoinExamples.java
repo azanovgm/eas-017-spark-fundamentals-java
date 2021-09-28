@@ -16,7 +16,7 @@ public class JoinExamples {
 
      public static void main(String[] args) throws InterruptedException {
          System.setErr(new NullPrintStream());
-         final SparkConf conf = new SparkConf().setAppName("KV RDD operations").setMaster("local[*]");
+         final SparkConf conf = new SparkConf().setAppName("joins").setMaster("local[*]");
          final JavaSparkContext sc = new JavaSparkContext(conf);
 
 
