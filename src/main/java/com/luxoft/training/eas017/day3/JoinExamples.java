@@ -1,4 +1,4 @@
-package com.luxoft.training.eas017.day2;
+package com.luxoft.training.eas017.day3;
 
 
 import org.apache.commons.io.output.NullPrintStream;
