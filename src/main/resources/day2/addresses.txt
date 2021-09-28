@@ -1,0 +1,4 @@
+Ritual,1026 Valencia St
+Philz,748 Van Ness Ave
+Philz,3101 24th St
+Starbucks,Seattle
