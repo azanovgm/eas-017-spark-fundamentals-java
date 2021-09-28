@@ -1,4 +1,4 @@
-package com.luxoft.training.eas017.day1;
+package com.luxoft.training.eas017.day2;
 
 import org.apache.commons.io.output.NullPrintStream;
 import org.apache.spark.SparkConf;
