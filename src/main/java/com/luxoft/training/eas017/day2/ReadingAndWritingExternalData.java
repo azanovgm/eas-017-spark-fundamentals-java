@@ -40,7 +40,7 @@ public class ReadingAndWritingExternalData {
                 return String.format("{\"a\": %s,\"b\": %s,\"c\": %s}",
                         values[0], values[1], values[2]);
             });
-        jsons.saveAsTextFile("src/main/resources/day1/out.json");
+        jsons.saveAsTextFile("src/main/resources/day2/out.json");
 
         System.out.println(textFile.getNumPartitions());
     }
