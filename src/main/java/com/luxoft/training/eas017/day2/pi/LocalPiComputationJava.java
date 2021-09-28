@@ -1,4 +1,4 @@
-package com.luxoft.training.eas017.day1.pi;
+package com.luxoft.training.eas017.day2.pi;
 
 import static java.lang.Math.random;
 
