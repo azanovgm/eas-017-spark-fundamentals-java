@@ -18,10 +18,10 @@ public class ReadingAndWritingExternalData {
         JavaRDD<String> textFile = sc.textFile("src/main/resources/day1/file01.csv");
 
         // We can read multiple files
-        textFile = sc.textFile("src/main/resources/day1/file01.csv,src/main/resources/day1/file02.csv");
+        textFile = sc.textFile("src/main/resources/day2/file01.csv,src/main/resources/day1/file02.csv");
 
         // We can read a file using wildcard
-        textFile = sc.textFile("src/main/resources/day1/file*.csv");
+        textFile = sc.textFile("src/main/resources/day2/file*.csv");
 
         textFile.foreach(s -> System.out.println(s));
 
