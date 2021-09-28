@@ -11,7 +11,7 @@ public class ReadingAndWritingExternalData {
 
     public static void main(String[] args)  {
         System.setErr(new NullPrintStream());
-        final SparkConf conf = new SparkConf().setAppName("AggregateIllustrated").setMaster("local[*]");
+        final SparkConf conf = new SparkConf().setAppName("ReadWrite").setMaster("local[*]");
         final JavaSparkContext sc = new JavaSparkContext(conf);
 
         // We can read a single text file
