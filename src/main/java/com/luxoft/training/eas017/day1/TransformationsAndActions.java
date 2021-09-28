@@ -23,14 +23,14 @@ public class TransformationsAndActions {
         JavaRDD<Integer> rdd = sc.parallelize(numbers, 2);
 
         List<Integer> localListOnDriver = rdd.collect();
-        System.out.println("rdd contents: " + localListOnDriver.toString());
+        System.out.println("rdd contents: " + localListOnDriver);
 
         JavaRDD<Integer> evenNumbersRDD = rdd.filter(n -> n % 2 == 0);
-        System.out.println("evenNumbersRDD contents:" + evenNumbersRDD.collect().toString());
+        System.out.println("evenNumbersRDD contents:" + evenNumbersRDD.collect());
 
         //Some map example
         JavaRDD<Integer> mappedRdd = rdd.map(i -> i+100);
-        System.out.println("mappedRdd contents:" + mappedRdd.collect().toString());
+        System.out.println("mappedRdd contents:" + mappedRdd.collect());
 
         int minEvenNumber = rdd.min(new IntegerComparator());
         System.out.println("Min even number is:" + minEvenNumber);
@@ -38,7 +38,7 @@ public class TransformationsAndActions {
         System.out.println("Min even number is:" + minEvenNumber);
 
         JavaDoubleRDD squaredNumbersRDD = rdd.mapToDouble(n -> Math.pow(n, 2));
-        System.out.println("squaredNumbersRDD contents: " + squaredNumbersRDD.collect().toString());
+        System.out.println("squaredNumbersRDD contents: " + squaredNumbersRDD.collect());
 
         double maxSquare = squaredNumbersRDD.max();
         System.out.println("Max square is " + maxSquare);
