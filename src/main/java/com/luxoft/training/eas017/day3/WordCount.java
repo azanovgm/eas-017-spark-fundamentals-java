@@ -24,10 +24,10 @@ public class WordCount {
         //TODO
         //Find what is the most frequent word length in text
         //To extract words, convert string to lowercase and
-        //keep only alpha-numeric characters and whitespaces (Hint: you might want to use regex "[^a-z]")
+        //keep only letter characters and whitespaces (Hint: you might want to use regex "[^a-z\\s]")
 
         int mostFrequentWordLength = text.flatMap(line -> Arrays.asList(line.split(" ")).iterator())
-                .map(word -> word.toLowerCase().replaceAll("[^a-z]", ""))
+                .map(word -> word.toLowerCase().replaceAll("[^a-z\\s]", ""))
                 .keyBy(word -> word.length())
                 .aggregateByKey(0, (count, word) -> count + 1, (count1, count2) -> count1 + count2)
                 .mapToPair(tuple -> tuple.swap())
