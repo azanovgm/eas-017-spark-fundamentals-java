@@ -24,7 +24,7 @@ public class WordCount {
         //TODO
         //Find what is the most frequent word length in text
         //To extract words, convert string to lowercase and
-        //keep only alpha-numeric characters and whitespaces (Hint: you might want to use regex "[^a-z]")
+        //keep only letter characters and whitespaces (Hint: you might want to use regex "[^a-z\\s]")
 
         int mostFrequentWordLength = 0;
 
