@@ -18,16 +18,6 @@ public class CachingAndRepartitioning {
          JavaRDD<Integer> rdd = sc.parallelize(
             IntStream.range(0, 100).boxed().collect(Collectors.toList()), 5);
 
-         rdd.repartition(1).collect();
-
-         rdd.coalesce(1).collect();
-
-         JavaRDD<Integer> rdd2 = rdd.filter(x -> x > 50).cache();
-
-         rdd2.count();
-
-         rdd2.map(x -> x + 100).collect();
-
 
          Thread.sleep(300_000);
 
