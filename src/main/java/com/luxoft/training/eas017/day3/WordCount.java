@@ -14,7 +14,7 @@ public class WordCount {
         final SparkConf conf = new SparkConf().setAppName("KV RDD operations").setMaster("local[*]");
         final JavaSparkContext sc = new JavaSparkContext(conf);
 
-        JavaRDD<String> text = sc.textFile( "src/main/resources/day2/alice-in-wonderland.txt");
+        JavaRDD<String> text = sc.textFile( "src/main/resources/day3/alice-in-wonderland.txt");
 
         //TODO
         //Lets count number of non empty lines
